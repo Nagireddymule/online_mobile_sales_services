@@ -1,0 +1,10 @@
+<div class="col-sm-4 col-lg-4 col-md-4">
+  <div class="thumbnail">
+    <%= link_to image_tag(mobile.image.url(:thumb)), view_mobile_path(mobile.id, mobile.mobile_name) %>
+    <div class="caption">
+      <h4 class="pull-right">Rs.<%= mobile.price %></h4>
+      <h4><a href="<%= view_mobile_path(mobile.id, mobile.mobile_name) %>" class="caption-title"><%= mobile.mobile_name %></a>
+      </h4>
+    </div>
+  </div>
+</div>

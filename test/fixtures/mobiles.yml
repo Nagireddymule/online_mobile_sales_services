@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand_name: MyString
+  price: 1
+  mobile_type: MyString
+  top_os: MyString
+  battery_capacity: MyString
+  screen_size: MyString
+  ram: MyString
+  resolution_type: MyString
+  internet_features: MyString
+  sim_type: MyString
+  primary_camera: MyString
+  os_version_name: MyString
+  secondary_camera: MyString
+  network_type: MyString
+  clock_speed: MyString
+  features: MyString
+  number_of_cores: MyString
+  availability: MyString
+
+two:
+  brand_name: MyString
+  price: 1
+  mobile_type: MyString
+  top_os: MyString
+  battery_capacity: MyString
+  screen_size: MyString
+  ram: MyString
+  resolution_type: MyString
+  internet_features: MyString
+  sim_type: MyString
+  primary_camera: MyString
+  os_version_name: MyString
+  secondary_camera: MyString
+  network_type: MyString
+  clock_speed: MyString
+  features: MyString
+  number_of_cores: MyString
+  availability: MyString

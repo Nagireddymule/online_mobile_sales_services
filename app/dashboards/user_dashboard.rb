@@ -22,6 +22,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     name: Field::String,
+    role: Field::String.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -53,6 +54,7 @@ class UserDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :name,
+    :role,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -70,6 +72,7 @@ class UserDashboard < Administrate::BaseDashboard
     :current_sign_in_ip,
     :last_sign_in_ip,
     :name,
+    :role,
   ].freeze
 
   # Overwrite this method to customize how users are displayed

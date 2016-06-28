@@ -24,3 +24,8 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+
+gem 'bourbon'
+
+gem "paperclip", "~> 5.0.0.beta1"
+gem 'twilio-ruby', '~> 4.11.1'

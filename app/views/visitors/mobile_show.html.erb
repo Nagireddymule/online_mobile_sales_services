@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" style="padding-top: 50px;">
+      <%= image_tag @mobile.image.url(:medium) %>
+    </div>
+    <div class="col-md-4">
+      <h3><%= @mobile.mobile_name %></h3>
+      <dl class="dl-horizontal">
+        <% skip_values = ['id', 'mobile_name', 'created_at', 'updated_at', 'image_file_name', 'image_content_type', 'image_file_size', 'image_updated_at']%>
+        <% @mobile.attributes.each do |title, value|%>
+          <% unless skip_values.include?(title) %>
+            <dt><%= title.gsub('_', ' ').capitalize %></dt>
+            <dd><%= 'Rs. ' if title == 'price' %><%= value %></dd>
+          <% end %>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+      <h4>Delars:</h4>
+      <% @mobile.delars.each do |delar| %>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= delar.name %></h3>
+            </div>
+            <% skip_values = ['id', 'name', 'address', 'created_at', 'updated_at']%>
+            <div class="panel-body">
+              <dl class="dl-horizontal" >
+                <% delar.attributes.each do |title, value|%>
+                    <% unless skip_values.include?(title) %>
+                        <dt><%= title.gsub('_', ' ').capitalize %></dt>
+                        <dd><%= value %></dd>
+                    <% end %>
+                <% end %>
+              </dl>
+            </div>
+            <div class="panel-footer">
+              <button type="button" class="btn btn-success" onclick="sendOutSms(<%= delar.id %>)" id="send_sms">Send SMS</button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function sendOutSms(delar_id){
+      $('#send_sms').addClass('disabled');
+      $.ajax('/send_sms?delar_id='+delar_id, {
+          success: function(data) {
+             alert("Sent Your details to delar. Will contact you soon.");
+             $('#send_sms').removeClass('disabled');
+          },
+          error: function() {
+              $('#send_sms').removeClass('disabled');
+          }
+      });
+  }
+</script>
